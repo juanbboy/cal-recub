@@ -1,12 +1,10 @@
 const express = require("express");
 const ruta = express.Router();
 
-let modeloDatos = require("../Modelo/modelo");
-let horarios = require("../Modelo/horarios");
-let needle = require("../Modelo/needle");
+let recubrir = require("../Modelo/recubrir");
 
 ruta.get('/', (req, res) => {
-  modeloDatos.find((error, data, next) => {
+  recubrir.find((error, data, next) => {
     if (error) {
       return next(error);
     } else {
@@ -15,18 +13,8 @@ ruta.get('/', (req, res) => {
   });
 });
 
-ruta.get('/horarios', (req, res) => {
-  horarios.find((error, data, next) => {
-    if (error) {
-      return next(error);
-    } else {
-      res.json(data);
-    }
-  });
-});
-
-ruta.get('/needle', (req, res) => {
-  needle.find((error, data, next) => {
+ruta.get('/recubrir', (req, res) => {
+  recubrir.find((error, data, next) => {
     if (error) {
       return next(error);
     } else {
@@ -36,49 +24,33 @@ ruta.get('/needle', (req, res) => {
 });
 
 const bcrypt = require("bcrypt");
-ruta.post('/registrar', async (req, res, next) => {
 
-  const emailExiste = await modeloDatos.findOne({ email: req.body.email })
-  if (emailExiste) {
-    return res.status(400).json({ error: "el usuario ya se encuentra registrado" })
-  }
-  //const encryp=await bcrypt.genSalt(10);
-  const password = await bcrypt.hash(req.body.password, 10);
+ruta.post('/regrecubrir', async (req, res, next) => {
 
-  const user = new modeloDatos({
+  const ingreso = new recubrir({
     name: req.body.name,
-    phone: req.body.phone,
-    email: req.body.email,
-    password: password
+    tipo: req.body.tipo,
+    uno: req.body.uno,
+    dos: req.body.dos,
+    tres: req.body.tres,
+    cuatro: req.body.cuatro,
+    cinco: req.body.cinco,
+    seis: req.body.seis,
+    siete: req.body.siete,
+    ocho: req.body.ocho,
+    nueve: req.body.nueve,
+    diez: req.body.diez,
+    once: req.body.once,
+    doce: req.body.doce,
+    tspand: req.body.tspand,
+    tnylonext: req.body.tnylonext,
+    tnylonint: req.body.tnylonint,
+    psup: req.body.psup,
+    pinf: req.body.pinf,
+    puestos: req.body.puestos
   })
 
-  modeloDatos.create(user, (error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      console.log(data);
-      res.json(data);
-    }
-  });
-});
-
-ruta.post('/regneedle', async (req, res, next) => {
-
-  const ingreso = new needle({
-    name: req.body.name,
-    cod: req.body.cod,
-    g09: req.body.g09,
-    g05: req.body.g05,
-    a75: req.body.a75,
-    a76: req.body.a76,
-    a06: req.body.a06,
-    a09: req.body.a09,
-    a12: req.body.a12,
-    a16: req.body.a16,
-    obs: req.body.obs
-  })
-
-  needle.create(ingreso, (error, data) => {
+  recubrir.create(ingreso, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -89,7 +61,7 @@ ruta.post('/regneedle', async (req, res, next) => {
 });
 
 ruta.get("/edit-student/:id", (req, res) => {
-  modeloDatos.findById(req.params.id, (error, data, next) => {
+  recubrir.findById(req.params.id, (error, data, next) => {
     if (error) {
       return next(error);
     } else {
@@ -99,7 +71,7 @@ ruta.get("/edit-student/:id", (req, res) => {
 });
 
 ruta.put("/update-student/:id", (req, res, next) => {
-  modeloDatos.findByIdAndUpdate(
+  recubrir.findByIdAndUpdate(
     req.params.id,
     {
       $set: req.body,
@@ -116,8 +88,8 @@ ruta.put("/update-student/:id", (req, res, next) => {
   );
 });
 
-ruta.delete("/delete-student/:id", (req, res, next) => {
-  modeloDatos.findByIdAndRemove(req.params.id, (error, data) => {
+ruta.delete("/delrecubrir/:id", (req, res, next) => {
+  recubrir.findByIdAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
     } else {
@@ -128,23 +100,12 @@ ruta.delete("/delete-student/:id", (req, res, next) => {
   });
 });
 
-ruta.delete("/delneedle/:id", (req, res, next) => {
-  needle.findByIdAndRemove(req.params.id, (error, data) => {
-    if (error) {
-      return next(error);
-    } else {
-      res.status(200).json({
-        msg: data,
-      });
-    }
-  });
-});
 
 
 const jwt = require("jsonwebtoken")
 
 ruta.post("/login", async (req, res) => {
-  const user = await modeloDatos.findOne({ email: req.body.email });
+  const user = await recubrir.findOne({ email: req.body.email });
   if (!user) {
     return res.status(400).json({
       error: "usuario no esta registrado"
