@@ -182,7 +182,7 @@ let ficha = new Schema(
         },
         date: {
             type: Date,
-            default: new Date(new Date() + 7 * 2 * 60 * 60 * 1000)
+            default: new Date(+new Date() + 7)
         },
     },
     {
