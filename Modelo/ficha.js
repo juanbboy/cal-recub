@@ -182,7 +182,7 @@ let ficha = new Schema(
         },
         date: {
             type: Date,
-            default: new Date.toLocaleTimeString()
+            default: new Date(new Date().toLocaleDateString())
         },
     },
     {
