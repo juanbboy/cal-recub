@@ -129,6 +129,12 @@ let recubrir = new Schema(
         tipocarre: {
             type: String,
         },
+        capcarre: {
+            type: Number,
+        },
+        huso: {
+            type: Number,
+        },
         date: {
             type: Date,
             default: Date.now
