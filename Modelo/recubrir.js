@@ -120,6 +120,15 @@ let recubrir = new Schema(
         catorce: {
             type: Number,
         },
+        modelo: {
+            type: String,
+        },
+        tipohuso: {
+            type: String,
+        },
+        tipocarre: {
+            type: String,
+        },
         date: {
             type: Date,
             default: Date.now
