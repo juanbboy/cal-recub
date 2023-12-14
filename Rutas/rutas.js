@@ -2,6 +2,7 @@ const express = require("express");
 const ruta = express.Router();
 
 let recubrir = require("../Modelo/recubrir");
+let ficha = require("../Modelo/ficha");
 
 ruta.get('/', (req, res) => {
   recubrir.find((error, data, next) => {
