@@ -63,6 +63,63 @@ let recubrir = new Schema(
         puestos: {
             type: Number,
         },
+        alm: {
+            type: Number,
+        },
+        velcrom: {
+            type: Number,
+        },
+        velest: {
+            type: Number,
+        },
+        velreco: {
+            type: Number,
+        },
+        tpminf: {
+            type: Number,
+        },
+        tpmsup: {
+            type: Number,
+        },
+        rpmhuso: {
+            type: Number,
+        },
+        rpmhusos: {
+            type: Number,
+        },
+        titfin: {
+            type: Number,
+        },
+        tiempo: {
+            type: Number,
+        },
+        grhora: {
+            type: Number,
+        },
+        proddia: {
+            type: Number,
+        },
+        relcogida: {
+            type: Number,
+        },
+        rendimiento: {
+            type: Number,
+        },
+        spandex: {
+            type: Number,
+        },
+        nylon: {
+            type: Number,
+        },
+        cobertura: {
+            type: Number,
+        },
+        trece: {
+            type: Number,
+        },
+        catorce: {
+            type: Number,
+        },
         date: {
             type: Date,
             default: Date.now
