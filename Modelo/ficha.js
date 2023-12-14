@@ -182,7 +182,7 @@ let ficha = new Schema(
         },
         date: {
             type: String,
-            default: new Date(new Date())
+            default: new Date
         },
     },
     {
