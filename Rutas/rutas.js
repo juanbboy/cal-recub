@@ -69,7 +69,9 @@ ruta.post('/regrecubrir', async (req, res, next) => {
     catorce: req.body.catorce,
     modelo: req.body.modelo,
     tipohuso: req.body.tipohuso,
-    tipocarre: req.body.tipocarre
+    tipocarre: req.body.tipocarre,
+    capcarre: req.body.capcarre,
+    huso: req.body.huso,
   })
 
   recubrir.create(ingreso, (error, data) => {
