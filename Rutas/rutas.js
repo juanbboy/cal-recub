@@ -47,7 +47,26 @@ ruta.post('/regrecubrir', async (req, res, next) => {
     tnylonint: req.body.tnylonint,
     psup: req.body.psup,
     pinf: req.body.pinf,
-    puestos: req.body.puestos
+    puestos: req.body.puestos,
+    alm: req.body.alm,
+    velcrom: req.body.velcrom,
+    velest: req.body.velest,
+    velreco: req.body.velreco,
+    tpminf: req.body.tpminf,
+    tpmsup: req.body.tpmsup,
+    rpmhuso: req.body.rpmhuso,
+    rpmhusos: req.body.rpmhusos,
+    titfin: req.body.titfin,
+    tiempo: req.body.tiempo,
+    grhora: req.body.grhora,
+    proddia: req.body.proddia,
+    relcogida: req.body.relcogida,
+    rendimiento: req.body.rendimiento,
+    spandex: req.body.spandex,
+    nylon: req.body.nylon,
+    cobertura: req.body.cobertura,
+    trece: req.body.trece,
+    catorce: req.body.catorce,
   })
 
   recubrir.create(ingreso, (error, data) => {
