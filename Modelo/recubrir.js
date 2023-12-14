@@ -112,7 +112,7 @@ let recubrir = new Schema(
             type: Number,
         },
         cobertura: {
-            type: Number,
+            type: String,
         },
         trece: {
             type: Number,
