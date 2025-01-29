@@ -106,10 +106,13 @@ let ficha = new Schema(
             type: Number,
         },
         spandex: {
-            type: Number,
+            type: String,
         },
         nylon: {
-            type: Number,
+            type: String,
+        },
+        nylone: {
+            type: String,
         },
         cobertura: {
             type: String,
