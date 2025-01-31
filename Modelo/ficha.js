@@ -46,13 +46,13 @@ let ficha = new Schema(
             type: Number,
         },
         tspand: {
-            type: Number,
+            type: String,
         },
         tnylonext: {
-            type: Number,
+            type: String,
         },
         tnylonint: {
-            type: Number,
+            type: String,
         },
         psup: {
             type: Number,
