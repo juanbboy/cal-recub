@@ -158,6 +158,7 @@ ruta.post('/regficha', async (req, res, next) => {
     nylontex: req.body.nylontex,
     nylontexi: req.body.nylontexi,
     spantex: req.body.spantex,
+    nylone: req.body.nylone,
   })
 
   ficha.create(ingreso, (error, data) => {
